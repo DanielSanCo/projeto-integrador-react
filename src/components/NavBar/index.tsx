@@ -4,7 +4,6 @@ import {Box} from '@mui/material';
 import './style.css';
 
 const navigationLinks = [
-    {name: 'Home', href: '/'},
     {name: 'Posts', href: ''},
     {name: 'Perfil', href: ''},
     {name: 'Sobre', href: '/sobre'},

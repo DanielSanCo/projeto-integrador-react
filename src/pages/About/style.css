@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 h1, h2 {
     text-align: center;
@@ -15,4 +16,46 @@ h1, h2 {
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 1px 5px black;
     border-radius: 10px;
+}
+.integrantes {
+    min-height: 100vh; width: 100vw;
+    display: flex; justify-content: center; align-items: center;
+}
+.integrantes div img {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    border: 3px solid orange;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all ease-in .4s;
+    position: absolute;
+}
+.integrantes div img:nth-child(2) {
+    margin-left: -200px;
+    margin-top: -50px;
+    width: 70px; height: 70px;
+}
+.integrantes div img:nth-child(3) {
+    margin-left: -50px;
+    margin-top: -100px;
+    width: 50px; height: 50px;
+}
+.integrantes div img:nth-child(4) {
+    margin-left: 200px;
+    margin-top: -100px;
+    width: 90px; height: 90px;
+}
+.integrantes div img:nth-child(5) {
+    margin-left: 100px;
+    margin-top: 100px;
+    width: 50px; height: 50px;
+}
+.integrantes div img:nth-child(6) {
+    margin-left: -300px;
+    margin-top: 100px;
+    width: 110px; height: 110px;
+}
+.integrantes div img:hover {
+    transform: scale(1.3);
+    border-radius: 7px;
 }

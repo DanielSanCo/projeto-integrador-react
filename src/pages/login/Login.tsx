@@ -30,7 +30,7 @@ function Login() {
 
     useEffect(() => {
         if (token !== '') {
-            navigate('/login')
+            navigate('/home')
         }
     }, [token])
 
@@ -41,7 +41,7 @@ function Login() {
             // const resposta = await api.post(`/usuarios/logar`, userLogin)
             // setToken(resposta.data.token)
 
-            await login(`usuarios/logar`, userLogin, setToken )
+            await login(`auth/logar`, userLogin, setToken )
 
             alert('Usuário logado com sucesso')
         } catch(error) {
