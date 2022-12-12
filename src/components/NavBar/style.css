@@ -1,33 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Oswald:wght@300&display=swap');
 
-.header {
+.nav {
+    width: 100vw;
+    background: rgb(6, 140, 181);
+    background: radial-gradient(circle, rgba(6, 140, 181, 1) 35%, rgba(0, 45, 112, 1) 100%);
     display: flex;
     justify-content: space-around;
-    height: 50px;
     align-items: center;
-    background-color: #1b4ae6;
-}
-.cursor {
-    cursor: pointer;
-    color: white;
-}
-.cursor2 {
-    height: 50px; width: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all ease-in .2s;
-}
-.logo {
     height: 60px;
-}
-.cursor2:hover {
-    background-color: #2d97d8;
-}
-.text-decorator-none {
-    text-decoration: none;
+    font-family: 'Nixie One', cursive;
+    font-family: 'Oswald', sans-serif;
+    position: fixed;
+    z-index: 10;
 }
 
-.input {
-    background-color: white;
+
+.nav .logo img {
+    height: 60px;
+}
+
+.nav ul {
+    display: flex;
+}
+
+.nav ul .a {
+    text-decoration: none;
+    margin: 15px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in .3s;
+    color: white;
+}
+
+.nav ul .a:hover {
+    background: rgb(10, 161, 207);
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav .input {
+    height: 35px;
+    border: none;
     border-radius: 5px;
 }

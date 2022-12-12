@@ -1,36 +1,46 @@
 import React from 'react';
 import { AppBar, TextField, Toolbar, Typography } from '@material-ui/core';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
 import './style.css';
-
-const navigationLinks = [
-    {name: 'Posts', href: ''},
-    {name: 'Perfil', href: ''},
-    {name: 'Sobre', href: '/sobre'},
-    {name: 'Contato', href: '/contato'},
-    {name: 'Login', href: '/login'}
-]
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { TokenState } from '../../store/tokens/TokensReducer';
+import { addToken } from '../../store/tokens/Actions';
 
 function Navbar() {
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const goLogout = () => {
+        dispatch(addToken(''));
+        alert("Usuário deslogado")
+        navigate('/')
+    }
+
+    var navbarComponent;
+
+    if (token != "") {
+        navbarComponent = <nav className='nav'>
+            <Box className="logo" >
+                <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logo" />
+            </Box>
+            <ul>
+                <a href="" className="a"><li>Posts</li></a>
+                <a href="" className="a"><li>Perfil</li></a>
+                <a href="/sobre" className="a"><li>Sobre</li></a>
+                <a href="/contato" className="a"><li>Contato</li></a>
+                <a href="/" className="a" onClick={goLogout}><li>Logout</li></a>
+            </ul>
+            <input className='input' placeholder='pesquisar' />
+        </nav>
+    }
+
     return (
         <>
-            <AppBar position="fixed" className='static'>
-                <Box className='header'>
-                    <Box className="cursor" >
-                        <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logo"/>
-                    </Box>
-                    <Box display="flex" justifyContent="start">
-                        {navigationLinks.map((item) => (
-                            <Box mx={1} className="cursor cursor2">
-                                <Typography color="inherit">
-                                    <a href={item.href} className="a">{item.name}</a>
-                                </Typography>
-                            </Box>
-                        ))}
-                    </Box>
-                    <TextField className='input' placeholder='pesquisar'/>
-                </Box>
-            </AppBar>
+            {navbarComponent}
         </>
     )
 }

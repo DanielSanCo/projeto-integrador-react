@@ -1,16 +1,19 @@
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
 import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate, } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
+import { addToken } from '../../store/tokens/Actions';
 import './Login.css';
 
 function Login() {
 
     let navigate = useNavigate();
-    const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch();
+    const [token, setToken] = useState('');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -30,6 +33,7 @@ function Login() {
 
     useEffect(() => {
         if (token !== '') {
+            dispatch(addToken(token));
             navigate('/home')
         }
     }, [token])
@@ -50,31 +54,25 @@ function Login() {
     }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid alignItems='center' xs={6}>
-                <Box padding={20}>
-                    <form onSubmit={onSubmit}>
-                        <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center'>Entrar</Typography>
-                        <TextField id='usuario' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
-                        <TextField id='senha' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
-                        <Box marginTop={2} textAlign='center'>
-                            <Button type='submit' variant='contained' color='primary'>
-                                Logar
-                            </Button>
+        <Grid className='container'>
+            <Box className='loginArea'>
+                <form onSubmit={onSubmit}>
+                    <h2>Login</h2>
+
+                    <input type='text' id='usuario' className='input' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} placeholder='E-mail' name='usuario' />
+
+                    <input id='senha' className='input' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} placeholder='Senha' name='senha' type='password' />
+
+                    <Box className="entrarArea">
+                        <Button className='button' type='submit'>
+                            Entrar
+                        </Button>
+                        <Box>
+                            <a href="/cadastrousuario">Cadastre-se!</a>
                         </Box>
-                    </form>
-                    <Box display='flex' justifyContent='center' marginTop={2}>
-                        <Box marginRight={1}>
-                            <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
-                        </Box>
-                        <Link to='/cadastrousuario'>
-                            <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
-                        </Link>
                     </Box>
-                </Box>
-            </Grid>
-            <Grid xs={6} className='imagem'>
-            </Grid>
+                </form>
+            </Box>
         </Grid>
     );
 }

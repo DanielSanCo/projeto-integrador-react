@@ -1,21 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Nixie+One&family=Oswald:wght@300&display=swap');
+
 .footer {
-    width: 100vw; height: 130px;
-    background-color: #1b4ae6;
+    width: 100vw; height: 200px;
+    background: rgb(6, 140, 181);
+    background: radial-gradient(circle, rgba(6, 140, 181, 1) 35%, rgba(0, 45, 112, 1) 100%);
     display: flex;
-    flex-direction: column;
-    box-shadow: 1px 1px 5px black;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-}
-.footer .logo {
-    font-weight: bold;
+    font-family: 'Nixie One', cursive;
+    font-family: 'Oswald', sans-serif;
     color: white;
 }
-.footer .direitos {
-    font-size: 13px;
-    font-weight: 100;
+
+.footer .links {
+    height: 100%; width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-.footer .icons img {
+.footer .middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer .logo {
+    width: 150px;
+}
+
+/* NOVOS */
+
+.footer .links h3 {
+    margin-bottom: 5px;
+}
+
+.footer .links a {
+    text-decoration: none;
+    color: white;
+}
+.footer .links a:hover {
+    color: rgba(255,255,255,.4);
+}
+
+.footer .contato {
+    height: 100%; width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer img {
     width: 30px;
-    margin: 10px;
+    margin: 5px;
 }
