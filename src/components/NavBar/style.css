@@ -17,9 +17,11 @@
     justify-content: center;
     transition: all ease-in .2s;
 }
+.logo {
+    height: 60px;
+}
 .cursor2:hover {
     background-color: #2d97d8;
-    border-bottom: 3px solid #1b4ae6;
 }
 .text-decorator-none {
     text-decoration: none;
@@ -27,6 +29,5 @@
 
 .input {
     background-color: white;
-    padding: 5px;
     border-radius: 5px;
 }

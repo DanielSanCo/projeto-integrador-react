@@ -17,15 +17,13 @@ function Navbar() {
             <AppBar position="fixed" className='static'>
                 <Box className='header'>
                     <Box className="cursor" >
-                        <Typography variant="h5" color="inherit">
-                            GeneratEdu
-                        </Typography>
+                        <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logo"/>
                     </Box>
                     <Box display="flex" justifyContent="start">
                         {navigationLinks.map((item) => (
                             <Box mx={1} className="cursor cursor2">
-                                <Typography variant="h6" color="inherit">
-                                    <a href={item.href}>{item.name}</a>
+                                <Typography color="inherit">
+                                    <a href={item.href} className="a">{item.name}</a>
                                 </Typography>
                             </Box>
                         ))}
