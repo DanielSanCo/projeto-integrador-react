@@ -8,8 +8,13 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { Box } from '@mui/material';
+//Novo
+import UserName from '../../../utils/usuario';
 
 function ListaPostagem() {
+    //NOVO
+    //Cima
+
     const [posts, setPosts] = useState<Postagem[]>([])
     let navigate = useNavigate();
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -39,7 +44,8 @@ function ListaPostagem() {
 
     return (
         <div className='container-list-post'>
-            <h1>Postagens</h1>
+            <Typography variant="h3" color="textSecondary" component="h1" align="center" >Postagens</Typography>
+                    
             {
                 posts.map(post => (
                     <Box m={2}>
@@ -47,7 +53,7 @@ function ListaPostagem() {
                             <Box className="user-list-post">
                                 <Box className="img"></Box>
                                 <Typography variant="body2" component="p" className='nome-list-post'>
-                                    Daniel
+                                    {UserName[0]}
                                 </Typography>
                             </Box>
 

@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { Box } from '@mui/material';
+import { toast } from 'react-toastify';
 
 
 function CadastroPost() {
@@ -20,7 +21,16 @@ function CadastroPost() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado!")
+            toast.error('Você precisa estar logado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
             navigate("/login")
 
         }
@@ -90,14 +100,34 @@ function CadastroPost() {
                     'Authorization': token
                 }
             })
-            alert('Postagem atualizada com sucesso');
+
+            toast.success('Postagem atualizada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Postagem cadastrada com sucesso');
+
+            toast.success('Postagem cadastrada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
         }
         back()
 
@@ -108,38 +138,36 @@ function CadastroPost() {
     }
 
     return (
-        <Container className="topo">
-            <Box className="form-update-post">
-                <form onSubmit={onSubmit}>
-                    <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Postagem</Typography>
-                    <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                    <TextField value={postagem.conteudo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="conteudo" label="conteudo" name="conteudo" variant="outlined" margin="normal" fullWidth />
-                    <TextField value={postagem.data_hora} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="data_hora" label="data e hora" name="data_hora" variant="outlined" margin="normal" fullWidth />
-                    <TextField value={postagem.curtida} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="curtida" label="curtida" name="curtida" variant="outlined" margin="normal" fullWidth />
+        <Container maxWidth="sm" className="topo">
+            <form onSubmit={onSubmit}>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Postagem</Typography>
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField value={postagem.conteudo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="conteudo" label="conteudo" name="conteudo" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.data_hora} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="data_hora" label="data e hora" name="data_hora" variant="outlined" margin="normal" fullWidth />
+                <TextField value={postagem.curtida} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="curtida" label="curtida" name="curtida" variant="outlined" margin="normal" fullWidth />
 
-                    <FormControl >
-                        <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-                        <Select
-                            labelId="demo-simple-select-helper-label"
-                            id="demo-simple-select-helper"
-                            onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
-                                headers: {
-                                    'Authorization': token
-                                }
-                            })}>
-                            {
-                                temas.map(tema => (
-                                    <MenuItem value={tema.id}>{tema.educacao}, {tema.serie} </MenuItem>
-                                ))
+                <FormControl >
+                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                    <Select
+                        labelId="demo-simple-select-helper-label"
+                        id="demo-simple-select-helper"
+                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                            headers: {
+                                'Authorization': token
                             }
-                        </Select>
-                        <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                        <Button type="submit" variant="contained" color="primary">
-                            Finalizar
-                        </Button>
-                    </FormControl>
-                </form>
-            </Box>
+                        })}>
+                        {
+                            temas.map(tema => (
+                                <MenuItem value={tema.id}>{tema.educacao}, {tema.serie} </MenuItem>
+                            ))
+                        }
+                    </Select>
+                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                    <Button type="submit" variant="contained" color="primary">
+                        Finalizar
+                    </Button>
+                </FormControl>
+            </form>
         </Container>
     )
 }

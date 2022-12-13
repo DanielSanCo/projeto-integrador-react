@@ -35,6 +35,16 @@ const Apresentacao = () => {
                 <h1>Bem-Vindo(a) à GENERATEDU</h1>
                 <h2>A Rede Social que Gera Educação</h2>
             </Box>
+            <Box className='conteudos-home'>
+                <h2>Conteudos</h2>
+                {/* Terá 3 cards com links para Posts, sobre e dicas */}
+            </Box>
+            <Box className='livros-home'>
+                {/* Livros recomendados */}
+            </Box>
+            <Box className='empresas-home'>
+                {/* Terá cards com empresas parceiras */}
+            </Box>
         </Box>
     )
 }

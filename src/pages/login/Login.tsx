@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
 import { addToken } from '../../store/tokens/Actions';
+import UserName from '../../utils/usuario';
 import './Login.css';
 
 function Login() {
@@ -65,12 +66,17 @@ function Login() {
                 progress: undefined,
                 });
         }
+
+        UserName.splice(0,0,userLogin.usuario)
     }
 
     return (
         <Grid className='container'>
             <Box className='loginArea'>
                 <form onSubmit={onSubmit}>
+                    <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logoLogin" />
+                    <h3>GENERATEDU</h3>
+                    <h4>Entre na estrada do conhecimento</h4>
                     <h2>Login</h2>
 
                     <input type='text' id='usuario' className='input' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} placeholder='E-mail' name='usuario' />
@@ -87,6 +93,10 @@ function Login() {
                     </Box>
                 </form>
             </Box>
+            <Box className='fundoImg1'>
+                <img src="./images/car.gif" alt="" />
+            </Box>
+
         </Grid>
     );
 }

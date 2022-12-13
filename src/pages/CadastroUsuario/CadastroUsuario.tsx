@@ -4,7 +4,8 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
-import './CadastroUsuario.css'
+import UserName from '../../utils/usuario';
+import './CadastroUsuario.css';
 
 function CadastroUsuario() {
     let navigate = useNavigate();
@@ -47,6 +48,7 @@ function CadastroUsuario() {
         })
 
     }
+
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if (confirmarSenha === user.senha) {
