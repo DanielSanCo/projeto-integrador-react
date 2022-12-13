@@ -3,9 +3,10 @@ import { AppBar, TextField, Toolbar, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { TokenState } from '../../store/tokens/TokensReducer';
-import { addToken } from '../../store/tokens/Actions';
+import { Link, useNavigate } from 'react-router-dom';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { addToken } from '../../../store/tokens/Actions';
+import { toast } from 'react-toastify';
 
 function Navbar() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -16,8 +17,17 @@ function Navbar() {
 
     const goLogout = () => {
         dispatch(addToken(''));
-        alert("Usuário deslogado")
-        navigate('/')
+        toast.info('Usuário deslogado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+        navigate('/login')
     }
 
     var navbarComponent;
@@ -28,11 +38,11 @@ function Navbar() {
                 <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logo" />
             </Box>
             <ul>
-                <a href="" className="a"><li>Posts</li></a>
-                <a href="" className="a"><li>Perfil</li></a>
-                <a href="/sobre" className="a"><li>Sobre</li></a>
-                <a href="/contato" className="a"><li>Contato</li></a>
-                <a href="/" className="a" onClick={goLogout}><li>Logout</li></a>
+                <Link to="/home" className="a"><li>Home</li></Link>
+                <Link to="/postagem" className="a"><li>Posts</li></Link>
+                <Link to="/sobre" className="a"><li>Sobre</li></Link>
+                <Link to="/contato" className="a"><li>Contato</li></Link>
+                <Link to="/" className="a" onClick={goLogout}><li>Logout</li></Link>
             </ul>
             <input className='input' placeholder='pesquisar' />
         </nav>

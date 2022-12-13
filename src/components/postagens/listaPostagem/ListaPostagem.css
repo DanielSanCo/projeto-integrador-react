@@ -1,0 +1,52 @@
+.container-list-post {
+    min-height: 120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-list-post h1 {
+    margin-top: 100px;
+}
+.card {
+    min-width: 60vw;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+}
+.user-list-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img {
+    background-color: red;
+    margin-right: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.nome-list-post {
+    color: darkgray;
+}
+.conteudo {
+    border: 1px solid darkgray;
+    width: 80%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titulo {
+    font-weight: bold;
+    font-size: 30px;
+}

@@ -1,4 +1,5 @@
 import { Box } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 const redesSociais = [
@@ -10,8 +11,8 @@ const redesSociais = [
 ]
 
 const navigation = [
-    { nome: 'Home', href: '/' },
-    { nome: 'Posts', href: '' },
+    { nome: 'Home', href: '/home' },
+    { nome: 'Posts', href: '/postagem' },
     { nome: 'Sobre', href: '/sobre' },
     { nome: 'Contato', href: '/contato' },
     { nome: 'Login', href: '/login' }
@@ -23,7 +24,7 @@ const Footer = () => {
             <Box className='links'>
                 <h3>Links Uteis</h3>
                 {navigation.map((item, index) => (
-                    <a href={item.href} key={index}>{item.nome}</a>
+                    <Link to={item.href} key={index}>{item.nome}</Link>
                 ))}
             </Box>
             
