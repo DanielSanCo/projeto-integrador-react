@@ -7,6 +7,7 @@ import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import { Box } from '@mui/material';
 
 
 function CadastroPost() {
@@ -15,7 +16,7 @@ function CadastroPost() {
     const [temas, setTemas] = useState<Tema[]>([])
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
-      );
+    );
 
     useEffect(() => {
         if (token == "") {
@@ -40,7 +41,7 @@ function CadastroPost() {
         tema: null
     })
 
-    useEffect(() => { 
+    useEffect(() => {
         setPostagem({
             ...postagem,
             tema: tema
@@ -107,36 +108,38 @@ function CadastroPost() {
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.conteudo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="conteudo" label="conteudo" name="conteudo" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.data_hora} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="data_hora" label="data e hora" name="data_hora" variant="outlined" margin="normal" fullWidth />
-                <TextField value={postagem.curtida} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="curtida" label="curtida" name="curtida" variant="outlined" margin="normal" fullWidth />
+        <Container className="topo">
+            <Box className="form-update-post">
+                <form onSubmit={onSubmit}>
+                    <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastrar Postagem</Typography>
+                    <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+                    <TextField value={postagem.conteudo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="conteudo" label="conteudo" name="conteudo" variant="outlined" margin="normal" fullWidth />
+                    <TextField value={postagem.data_hora} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="data_hora" label="data e hora" name="data_hora" variant="outlined" margin="normal" fullWidth />
+                    <TextField value={postagem.curtida} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="curtida" label="curtida" name="curtida" variant="outlined" margin="normal" fullWidth />
 
-                <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-                    <Select
-                        labelId="demo-simple-select-helper-label"
-                        id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
-                            headers: {
-                                'Authorization': token
+                    <FormControl >
+                        <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                        <Select
+                            labelId="demo-simple-select-helper-label"
+                            id="demo-simple-select-helper"
+                            onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                                headers: {
+                                    'Authorization': token
+                                }
+                            })}>
+                            {
+                                temas.map(tema => (
+                                    <MenuItem value={tema.id}>{tema.educacao}, {tema.serie} </MenuItem>
+                                ))
                             }
-                        })}>
-                        {
-                            temas.map(tema => (
-                                <MenuItem value={tema.id}>{tema.educacao}, {tema.serie} </MenuItem>
-                            ))
-                        }
-                    </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
-                        Finalizar
-                    </Button>
-                </FormControl>
-            </form>
+                        </Select>
+                        <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                        <Button type="submit" variant="contained" color="primary">
+                            Finalizar
+                        </Button>
+                    </FormControl>
+                </form>
+            </Box>
         </Container>
     )
 }

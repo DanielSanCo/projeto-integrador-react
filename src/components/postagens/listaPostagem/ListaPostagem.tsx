@@ -20,7 +20,6 @@ function ListaPostagem() {
         if (token == "") {
             alert("Você precisa estar logado!")
             navigate("/login")
-
         }
     }, [token])
 
@@ -43,55 +42,67 @@ function ListaPostagem() {
             <h1>Postagens</h1>
             {
                 posts.map(post => (
-                    <Box m={2} >
+                    <Box m={2}>
                         <Card variant="outlined" className='card'>
-                            <CardContent className="card-content">
-                                <Box className="user-list-post">
-                                    <Box className="img"></Box>
-                                    <Typography variant="body2" component="p" className='nome-list-post'>
-                                        Daniel
-                                    </Typography>
-                                </Box>
-                                <Typography variant="h5" component="h2" className='titulo'>
-                                    {post.titulo}
+                            <Box className="user-list-post">
+                                <Box className="img"></Box>
+                                <Typography variant="body2" component="p" className='nome-list-post'>
+                                    Daniel
                                 </Typography>
-                                <Typography variant="body2" component="p" className="conteudo">
-                                    {post.conteudo}
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    {post.data_hora}
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    {post.tema?.educacao}
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    {post.tema?.serie}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5}>
+                            </Box>
 
-                                    <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
-                                        <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                                                atualizar
-                                            </Button>
+                            <Box className="content-list-post">
+                                <CardContent className="card-content">
+
+                                    <Box className="boxCard">
+                                        <Box>
+                                            <Typography variant="h5" component="h2" className='titulo-list-post'>
+                                                {post.titulo}
+                                            </Typography>
+                                            <Typography variant="body2" component="p" className="conteudo">
+                                                {post.conteudo}
+                                            </Typography>
+                                            <Typography variant="body2" component="p">
+                                                {post.data_hora}
+                                            </Typography>
+                                            <Typography variant="body2" component="p">
+                                                {post.tema?.educacao}
+                                            </Typography>
+                                            <Typography variant="body2" component="p">
+                                                {post.tema?.serie}
+                                            </Typography>
                                         </Box>
-                                    </Link>
-                                    <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
-                                        <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
-                                                deletar
-                                            </Button>
-                                        </Box>
-                                    </Link>
-                                </Box>
-                            </CardActions>
+                                    </Box>
+
+                                </CardContent>
+
+                                <CardActions>
+
+                                    <Box display="flex" justifyContent="center" mb={1.5} className="actions-list-post">
+
+                                        <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
+                                            <Box mx={1}>
+                                                <Button variant="contained" className="marginLeft buttonBox" size='small' color="primary" >
+                                                    atualizar
+                                                </Button>
+                                            </Box>
+                                        </Link>
+                                        <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                                            <Box mx={1}>
+                                                <Button variant="contained" size='small' color="secondary" className="buttonBox">
+                                                    deletar
+                                                </Button>
+                                            </Box>
+                                        </Link>
+                                    </Box>
+
+                                </CardActions>
+                            </Box>
                         </Card>
-                    </Box>
+                    </Box >
                 ))
             }
-        </div>
+        </div >
     )
 }
 
