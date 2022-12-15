@@ -7,7 +7,6 @@ import { toast } from 'react-toastify';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
 import { addToken } from '../../store/tokens/Actions';
-import UserName from '../../utils/usuario';
 import './Login.css';
 
 function Login() {
@@ -66,8 +65,6 @@ function Login() {
                 progress: undefined,
                 });
         }
-
-        UserName.splice(0,0,userLogin.usuario)
     }
 
     return (

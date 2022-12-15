@@ -7,30 +7,78 @@
 .hHome {
     min-height: 100vh; width: 100vw;
     color: black;
-    animation: go-back 1s infinite;
     background-color: yellow;
-}
-
-.hHome:hover {
-    animation: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .conteudos-home {
-    background-color: green;
+    background-color: white;
+    min-height: 80vh; width: 100vw;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.link-home-content {
+    margin: 10px;
+    z-index: 1;
+}
+
+.livros-home {
+    background-color: whitesmoke;
     min-height: 100vh; width: 100vw;
     color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-@keyframes go-back {
-    0% {
-        transform: translateX(10px);
-    }
-
-    50% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(10px);
-    }
+.empresas-home {
+    background-color: azure;
+    min-height: 80vh; width: 100vw;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+.quadrado {
+    position: absolute;
+    width: 90vw; height: 60vh;
+    background-color: rgb(158, 158, 158);
+    margin-top: 250px;
+    z-index: 0;
+}
+
+.livros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin: 10px;
+    box-shadow: 1px 1px 4px black;
+}
+
+.livros img {
+    width: 150px;
+    margin-top: 20px;
+    margin: 10px;
+}
+
+.lendo-livro {
+    z-index: 2;
+    position: inherit;
+}
+
+.livros-home .livros-img {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 

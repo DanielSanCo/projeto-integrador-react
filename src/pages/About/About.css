@@ -1,0 +1,72 @@
+.container-About {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; width: 100vw;
+}
+
+.container-About .our-mission {
+    display: flex;
+    width: 60vw;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.container-About .our-mission img {
+    width: 350px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 300px;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 200px;
+    margin: 50px;
+}
+.integrantes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.integranteaTitulo {
+    background: radial-gradient(circle, rgb(146, 2, 159) 35%, rgb(112, 0, 104) 100%);
+    height: 40px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.eachIntegrante {
+    display: flex;
+    width: 600px;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+.eachIntegranteInfo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.eachIntegranteInfo div {
+    margin: 5px;
+}
+
+.eachIntegrante img {
+    width: 200px; height: 200px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 300px;
+    border-bottom-left-radius: 300px;
+    border-bottom-right-radius: 200px;
+}
+
+.memberCurriculo {
+    width: 80px; height: 25px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

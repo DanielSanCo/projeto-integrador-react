@@ -18,6 +18,7 @@ import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPosta
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Posts from './pages/Posts/Posts';
 
 function App() {
   return (
@@ -35,7 +36,7 @@ function App() {
 
           <Route path="/temas" element={<ListaTema />} />
 
-          <Route path="/postagem" element={<ListaPostagem />} />
+          <Route path="/postagem" element={<Posts />} />
 
           <Route path="/formularioPostagem" element={<CadastroPost />} />
 
