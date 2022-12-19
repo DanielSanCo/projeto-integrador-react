@@ -35,13 +35,14 @@
     margin: 10px;
     background-color: white;
     border: none;
+    border-radius: 5px;
 }
 
 .loginArea .button {
     height: 30px;
     width: 100px;
     border: none;
-    background: rgb(181, 6, 181);
+    background: linear-gradient(rgba(221,20,80,1), rgba(230,128,21,1));
     border-radius: 2px;
     transition: all ease-in .2s;
     margin: 10px;
@@ -82,4 +83,10 @@ h3{
 }
 h4 {
     margin-bottom: 0px;
+}
+
+.fundo-back {
+    position: absolute;
+    background: linear-gradient(black, rgba(0,0,0,0), black);
+    width: 100vw; height: 100vh;
 }

@@ -93,24 +93,19 @@ function CadastroUsuario() {
                     <h3>E transforme sua qualidade de ensino</h3>
                     <form onSubmit={onSubmit}>
                         <div className='inputArea'>
-                            <div className='circle'></div>
                             <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
                         </div>
                         <div className='inputArea'>
-                            <div className='circle'></div>
                             <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
                         </div>
 
                         <div className='inputArea'>
-                            <div className='circle'></div>
                             <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' type='password' margin='normal' fullWidth />
                         </div>
                         <div className='inputArea'>
-                            <div className='circle'></div>
                             <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarsenha' label='confirmar senha' variant='outlined' name='confirmarsenha' margin='normal' type='password' fullWidth />
                         </div>
                         <div className='inputArea'>
-                            <div className='circle'></div>
                             <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='foto' variant='outlined' name='foto' margin='normal' fullWidth />
                         </div>
                         <Box marginTop={2} textAlign='center' className='cadastroControler'>
@@ -119,7 +114,7 @@ function CadastroUsuario() {
                                     CANCELAR
                                 </div>
                             </Link>
-                            <Button type='submit' variant="contained" className='button'>
+                            <Button type='submit' variant="contained" className='buttonCadastro'>
                                 Cadastrar
                             </Button>
                         </Box>

@@ -1,5 +1,7 @@
 import { Box } from '@material-ui/core';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { TokenState } from '../../../store/tokens/TokensReducer';
 import './style.css';
 
 const redesSociais = [
@@ -19,31 +21,42 @@ const navigation = [
 ]
 
 const Footer = () => {
-    return (
-        <Box className='footer'>
-            <Box className='links'>
-                <h3>Links Uteis</h3>
-                {navigation.map((item, index) => (
-                    <Link to={item.href} key={index}>{item.nome}</Link>
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
+    var footercomponent;
+
+    if(token != ""){
+        footercomponent = <Box className='footer'>
+        <Box className='links'>
+            <h3>Links Uteis</h3>
+            {navigation.map((item, index) => (
+                <Link to={item.href} key={index}>{item.nome}</Link>
+            ))}
+        </Box>
+        
+        <Box className='middle'>
+        <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logo" />
+        <Box className='direitos'>&copy; Todos os direitos Reservados para GeneratEdu</Box>
+        </Box>
+
+        <Box className='contato'>
+
+            <Box className='redesSociais'>
+                <h3>Contate-nos</h3>
+                <p></p>
+                {redesSociais.map((item, index) => (
+                    <img src={item.img} alt="" key={index}/>
                 ))}
             </Box>
-            
-            <Box className='middle'>
-            <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logo" />
-            <Box className='direitos'>&copy; Todos os direitos Reservados para GeneratEdu</Box>
-            </Box>
-
-            <Box className='contato'>
-
-                <Box className='redesSociais'>
-                    <h3>Contate-nos</h3>
-                    <p></p>
-                    {redesSociais.map((item, index) => (
-                        <img src={item.img} alt="" key={index}/>
-                    ))}
-                </Box>
-            </Box>
         </Box>
+    </Box>
+    }
+    return (
+        <>
+        {footercomponent}
+        </>
     )
 }
 

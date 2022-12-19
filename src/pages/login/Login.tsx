@@ -71,7 +71,7 @@ function Login() {
         <Grid className='container'>
             <Box className='loginArea'>
                 <form onSubmit={onSubmit}>
-                    <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logoLogin" />
+                    <img src="https://media.discordapp.net/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logoLogin" />
                     <h3>GENERATEDU</h3>
                     <h4>Entre na estrada do conhecimento</h4>
                     <h2>Login</h2>
@@ -91,7 +91,8 @@ function Login() {
                 </form>
             </Box>
             <Box className='fundoImg1'>
-                <img src="./images/car.gif" alt="" />
+                <Box className='fundo-back'></Box>
+                <img src="./images/imagem-login.jpg" alt="" />
             </Box>
 
         </Grid>
