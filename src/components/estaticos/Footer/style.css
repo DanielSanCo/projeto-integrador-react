@@ -3,7 +3,7 @@
 .footer {
     width: 100vw; height: 200px;
     background: rgb(6, 140, 181);
-    background: radial-gradient(circle, rgb(146, 2, 159) 35%, rgb(112, 0, 104) 100%);
+    background: linear-gradient(rgba(221,20,80,1), rgba(230,128,21,1));
     display: flex;
     justify-content: space-around;
     align-items: center;

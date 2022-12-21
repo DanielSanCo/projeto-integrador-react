@@ -72,13 +72,13 @@ function Login() {
             <Box className='loginArea'>
                 <form onSubmit={onSubmit}>
                     <img src="https://media.discordapp.net/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logoLogin" />
-                    <h3>GENERATEDU</h3>
-                    <h4>Entre na estrada do conhecimento</h4>
-                    <h2>Login</h2>
+                    <Typography variant='h4'>GENERATEDU</Typography>
+                    <Box className='span'>Entre na estrada do conhecimento</Box>
+                    <Typography variant='h5' className='h5'>Login</Typography>
 
-                    <input type='text' id='usuario' className='input' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} placeholder='E-mail' name='usuario' />
+                    <TextField id='usuario' className='input' type='text' value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} placeholder='E-mail' name='usuario' />
 
-                    <input id='senha' className='input' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} placeholder='Senha' name='senha' type='password' />
+                    <TextField id='senha' className='input' value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updateModel(e)} placeholder='Senha' name='senha' type='password' />
 
                     <Box className="entrarArea">
                         <Button className='button' type='submit'>

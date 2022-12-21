@@ -88,31 +88,32 @@ function CadastroUsuario() {
         // </Grid>
         <Box className='container'>
             <Box className='signup'>
-                <Box className='contatoArea'>
-                    <h2>Cadastre-se</h2>
-                    <h3>E transforme sua qualidade de ensino</h3>
+                <Box className='cadastroArea'>
                     <form onSubmit={onSubmit}>
-                        <div className='inputArea'>
-                            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
-                        </div>
-                        <div className='inputArea'>
-                            <TextField value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
-                        </div>
+                        <img src="https://media.discordapp.net/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logoLogin" />
 
-                        <div className='inputArea'>
-                            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' type='password' margin='normal' fullWidth />
-                        </div>
-                        <div className='inputArea'>
-                            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarsenha' label='confirmar senha' variant='outlined' name='confirmarsenha' margin='normal' type='password' fullWidth />
-                        </div>
-                        <div className='inputArea'>
-                            <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' label='foto' variant='outlined' name='foto' margin='normal' fullWidth />
-                        </div>
+                        <Typography variant='h3'>Cadastre-se</Typography>
+                        <Typography variant='h6'>E transforme sua qualidade de ensino</Typography>
+
+                        <TextField className='inputArea' value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' placeholder='Nome' name='nome' />
+
+
+                        <TextField className='inputArea' value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' placeholder='E-mail' name='usuario' />
+
+
+                        <TextField className='inputArea' value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' type='password' placeholder='Senha' name='senha' />
+
+                        <TextField className='inputArea' value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='senha' placeholder='Confirmar Senha' name='senha' />
+
+                        <TextField className='inputArea' value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' placeholder='foto link' name='foto' />
+
+
+
                         <Box marginTop={2} textAlign='center' className='cadastroControler'>
                             <Link to='/login' className='text-decorator-none'>
-                                <div className='btnCancelar'>
+                                <Box className='btnCancelar'>
                                     CANCELAR
-                                </div>
+                                </Box>
                             </Link>
                             <Button type='submit' variant="contained" className='buttonCadastro'>
                                 Cadastrar
@@ -121,12 +122,12 @@ function CadastroUsuario() {
                     </form>
                 </Box>
             </Box>
-            <div className="fundoPreto">
+            <Box className="fundoPreto">
                 <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" />
-            </div>
-            <div className="imagemCadastro">
+            </Box>
+            <Box className="imagemCadastro">
                 <img src="https://errejotanoticias.com.br/wp-content/uploads/2021/08/dia-do-estudante.jpg" alt="" />
-            </div>
+            </Box>
         </Box>
     )
 }

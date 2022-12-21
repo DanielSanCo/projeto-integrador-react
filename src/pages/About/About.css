@@ -5,6 +5,7 @@
     align-items: center;
     flex-direction: column;
     min-height: 100vh; width: 100vw;
+    background: linear-gradient(rgba(221,20,80,1), rgba(230,128,21,1));
 }
 
 .container-About .our-mission {
@@ -29,19 +30,22 @@
     flex-direction: column;
 }
 .integranteaTitulo {
-    background: radial-gradient(circle, rgb(146, 2, 159) 35%, rgb(112, 0, 104) 100%);
     height: 40px;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
+    border-top: 1px solid black;
 }
 .eachIntegrante {
     display: flex;
-    width: 600px;
+    width: 60%;
     justify-content: space-around;
     margin-bottom: 100px;
+    background: linear-gradient(190deg, rgba(50, 50, 247, .8),rgba(0,0,0,0));
+    padding: 15px;
+    border-radius: 5px;
 }
 .eachIntegranteInfo {
     display: flex;
@@ -62,7 +66,7 @@
 }
 
 .memberCurriculo {
-    width: 80px; height: 25px;
+    width: 100px; height: 35px;
     background-color: blueviolet;
     color: white;
     border-radius: 3px;

@@ -31,7 +31,7 @@
     width: 70%;
 }
 
-.contatoArea {
+.cadastroArea {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -39,35 +39,19 @@
     flex-direction: column;
 }
 
-h1 {
-    color: black;
-}
-
-h3 {
-    margin-bottom: 10px;
-}
-
-.contatoArea form {
+.cadastroArea form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.contatoArea form input {
-    height: 30px;
-    border: none;
-    margin: 5px;
+.cadastroArea form textarea {
     border-radius: 5px;
     padding: 5px;
 }
 
-.contatoArea form textarea {
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.contatoArea form .buttonCadastro {
+.cadastroArea form .buttonCadastro {
     height: 30px;
     width: 150px;
     border: none;
@@ -81,7 +65,7 @@ h3 {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.contatoArea form .buttonCadastro:hover {
+.cadastroArea form .buttonCadastro:hover {
     background:  rgb(196, 102, 1);
 }
 
@@ -124,14 +108,11 @@ textarea {
     justify-content: center;
 }
 
-.inputArea {
-    display: flex;
-    align-items: center;
-}
-
-.circle {
-    width: 25px; height: 25px;
+.cadastroArea .inputArea {
+    height: 100%;
+    margin: 10px;
     background-color: white;
-    border-radius: 50%;
-    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
 }
