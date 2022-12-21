@@ -39,7 +39,8 @@ function Navbar() {
             </Box>
             <ul>
                 <Link to="/home" className="a"><li>Home</li></Link>
-                <Link to="/postagem" className="a"><li>Posts</li></Link>
+                <Link to="/posts" className="a"><li>Posts</li></Link>
+                <Link to="/temas" className="a"><li>Temas</li></Link>
                 <Link to="/sobre" className="a"><li>Sobre</li></Link>
                 <Link to="/contato" className="a"><li>Contato</li></Link>
                 <Link to="/" className="a" onClick={goLogout}><li>Logout</li></Link>

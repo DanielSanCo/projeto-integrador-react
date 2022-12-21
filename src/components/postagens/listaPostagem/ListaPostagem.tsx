@@ -39,18 +39,18 @@ function ListaPostagem() {
     }, [posts.length])
 
     return (
-        <div className='container-list-post'>
-            <Typography variant="h3" color="textSecondary" component="h1" align="center" >Postagens</Typography>
+        <Box className='container-list-post'>
+            
+            <Box className="fundoPostagem">
+                <img src="https://media.discordapp.net/attachments/1012745470659010570/1055131972856463432/biblioteca-universitaria.jpg" alt="" />
+            </Box>
+            <Typography className='postTitle' variant="h3" color="textSecondary" component="h1" align="center" >Postagens</Typography>
                     
             {
                 posts.map(post => (
-                    <Box m={2}>
+                    <Box m={2} className="eachPost">
                         <Card variant="outlined" className='card'>
                             <Box className="user-list-post">
-                                <Box className="img"></Box>
-                                <Typography variant="body2" component="p" className='nome-list-post'>
-                                    Daniel
-                                </Typography>
                             </Box>
 
                             <Box className="content-list-post">
@@ -104,7 +104,7 @@ function ListaPostagem() {
                     </Box >
                 ))
             }
-        </div >
+        </Box >
     )
 }
 

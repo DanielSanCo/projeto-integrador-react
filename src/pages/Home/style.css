@@ -4,24 +4,65 @@
     background: white;
 }
 
-.hHome {
-    min-height: 100vh; width: 100vw;
-    color: black;
-    background-color: yellow;
+.homeDegrade {
+    width: 100vw; height: 80vh;
+    background: rgba(0, 0, 0, .9);
+    position: absolute;
+    z-index: 3;
+    margin-top: -1653px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
+.showPost {
+    background: linear-gradient(rgba(221,20,80,1), rgba(230,128,21,1));
+    height: 50px; width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 30px;
+}
+
+.hHome {
+    min-height: 100vh; width: 100vw;
+    color: black;
+    background: linear-gradient(rgba(221,20,80,1), rgba(230,128,21,1));
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    background-image: url("https://media.discordapp.net/attachments/1012745470659010570/1054415218903634000/Leitura_Brasil_Header.webp");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.generateduBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .hHome .titulo-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     flex: 1;
+    color: white;
+    text-shadow: 1px 1px 5px black;
 }
 
 .hHome .imagem-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
 }
 
-.hHome .image-home img {
+.hHome .imagem-home img {
     width: 70%;
 }
 

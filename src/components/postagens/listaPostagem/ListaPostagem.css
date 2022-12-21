@@ -1,5 +1,5 @@
 .container-list-post {
-    min-height: 120vh;
+    min-height: 120vh; width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,8 +40,7 @@
     width: 100%;
 }
 .user-list-post {
-    background: rgb(6, 140, 181);
-    background: radial-gradient(circle, rgb(146, 2, 159) 35%, rgb(112, 0, 104) 100%);
+    background: linear-gradient(rgba(221,20,80,1), rgba(230,128,21,1));
     padding: 4px;
     margin-top: 0;
     width: 100%;
@@ -50,7 +49,6 @@
     align-items: center;
 }
 .img {
-    background-color: yellow;
     box-shadow: 1px 1px 5px black;
     margin-right: 20px;
     width: 30px;
@@ -75,4 +73,19 @@
 
 .buttonBox {
     margin: 5px;
+}
+
+.fundoPostagem {
+    width: 100vw; height: 100vh;
+}
+
+.fundoPostagem img {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    margin-top: -575px;
+}
+
+.eachPost, .postTitle {
+    z-index: 2;
 }

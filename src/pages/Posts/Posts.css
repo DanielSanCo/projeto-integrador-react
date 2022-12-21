@@ -1,2 +1,7 @@
 .linhaOpcoes {
 }
+
+.caixa {
+    
+    z-index: 2;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './About.css';
 import { Box, Typography } from '@mui/material';
 import { Collections } from '@mui/icons-material';
@@ -10,8 +10,12 @@ const About = () => {
         <Box className='container-About' data-aos="fade-up">
             <Box className='our-mission'>
                 <Box>
-                    <Typography variant='h4'>Nossa Missão</Typography>
-                    <Box>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, sequi aperiam. Dolorum libero, quam nostrum, repudiandae minus numquam voluptatibus illo eveniet in ea nam saepe quibusdam exercitationem voluptas facere ratione!</Box>
+                    <Typography variant='h4'>Sobre nós</Typography>
+                    <Box>Somos um grupo de jovens que participam de um
+                        Bootcamp da Generation, promovido por um projeto da
+                        Prefeitura do Rio de Janeiro - Programadores Cariocas.
+                        Visando o conhecimento na área do desenvolvimento na
+                        tecnologia.</Box>
                 </Box>
                 <Box>
                     <img src="./images/imagens/ensino.jpg" alt="" />
@@ -22,8 +26,16 @@ const About = () => {
                     <img src="./images/imagens/projetoMake.jpg" alt="" />
                 </Box>
                 <Box>
-                    <Typography variant='h4'>Nossa História</Typography>
-                    <Box>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, sequi aperiam. Dolorum libero, quam nostrum, repudiandae minus numquam voluptatibus illo eveniet in ea nam saepe quibusdam exercitationem voluptas facere ratione!</Box>
+                    <Typography variant='h4'>Nossa Missão</Typography>
+                    <Box>Nossa missão e visão através do nosso projeto
+                        GENERATEDU - GERAR EDUCAÇÃO. É propor uma rede
+                        voltada ao público de alunos e professores da rede
+                        pública, fazendo o compartilhamento de pensamentos,
+                        feedbacks e ideias inovadoras para os métodos de
+                        ensinamentos massivos que são estabelecido ao
+                        mesmo módulos há séculos. Acreditamos que faltam
+                        estímulos mais dinâmicos e atrativos, para os jovens se
+                        interessarem mais pela Educação.</Box>
                 </Box>
             </Box>
             <Box className='integrantes'>

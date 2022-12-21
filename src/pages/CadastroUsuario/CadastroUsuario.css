@@ -10,7 +10,7 @@
 }
 
 .signup {
-    width: 40vw; min-height: 80vh;
+    width: 40vw; min-height: 90vh;
     background: linear-gradient(rgba(221,20,80,.8), rgba(230,128,21,.8));
     display: flex;
     box-shadow: 1px 1px 5px black;
@@ -39,16 +39,15 @@
     flex-direction: column;
 }
 
+.cadastroArea img {
+    width: 30%;
+}
+
 .cadastroArea form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-.cadastroArea form textarea {
-    border-radius: 5px;
-    padding: 5px;
 }
 
 .cadastroArea form .buttonCadastro {
