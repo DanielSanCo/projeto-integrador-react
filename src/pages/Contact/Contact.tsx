@@ -16,8 +16,9 @@ const Contact = () => {
                         <img src="https://media.discordapp.net/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logoLogin" />
 
                         <Typography variant='h5' className='h5'>Contate-nos</Typography>
-                        <TextField id='nome' className='input' type='text' placeholder='Nome' name='nome' />
-                        <TextField id='usuario' className='input' type='text' placeholder='E-mail' name='usuario' />
+                        <input id='nome' className='input' type='text' placeholder='Nome' name='nome' />
+                        <input id='usuario' className='input' type='text' placeholder='E-mail' name='usuario' />
+                        <textarea name="assunto" id="assunto" placeholder="assunto" className="textarea"></textarea>
                         <Box marginTop={2} textAlign='center'>
                             <Button type='submit' variant="contained" className='button'>
                                 Enviar

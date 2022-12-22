@@ -40,12 +40,15 @@ function ListaPostagem() {
 
     return (
         <Box className='container-list-post'>
-            
-            <Box className="fundoPostagem">
-                <img src="https://media.discordapp.net/attachments/1012745470659010570/1055131972856463432/biblioteca-universitaria.jpg" alt="" />
-            </Box>
+
             <Typography className='postTitle' variant="h3" color="textSecondary" component="h1" align="center" >Postagens</Typography>
-                    
+
+            {posts.length <= 0 &&
+                <Box className="fundoPostagem">
+                    <img src="https://i.pinimg.com/originals/a9/ff/d7/a9ffd714fbd4966d46ef4ee77ce96e95.gif" alt="" />
+                </Box>
+            }
+
             {
                 posts.map(post => (
                     <Box m={2} className="eachPost">

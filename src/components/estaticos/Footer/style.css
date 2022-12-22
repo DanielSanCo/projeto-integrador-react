@@ -2,14 +2,15 @@
 
 .footer {
     width: 100vw; height: 200px;
-    background: rgb(6, 140, 181);
-    background: linear-gradient(rgba(221,20,80,1), rgba(230,128,21,1));
+    background: linear-gradient(black, rgb(59, 59, 59));
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: 'Nixie One', cursive;
     font-family: 'Oswald', sans-serif;
     color: white;
+    position: absolute;
+    z-index: 1;
 }
 
 .footer .links {

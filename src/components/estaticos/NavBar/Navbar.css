@@ -24,9 +24,9 @@
 
 .nav ul .a {
     text-decoration: none;
-    margin: 15px;
+    margin: 30px;
     height: 60px;
-    width: 60px;
+    width: 80px;
     display: flex;
     justify-content: center;
     align-items: center;

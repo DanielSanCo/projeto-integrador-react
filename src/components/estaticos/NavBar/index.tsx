@@ -1,12 +1,14 @@
 import React from 'react';
 import { AppBar, TextField, Toolbar, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
-import './style.css';
+import './Navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { addToken } from '../../../store/tokens/Actions';
 import { toast } from 'react-toastify';
+import { HomeRounded, ExitToAppRounded, LibraryBooksRounded, GroupRounded, AssignmentRounded, ContactMailRounded} from '@mui/icons-material';
+
 
 function Navbar() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -38,12 +40,30 @@ function Navbar() {
                 <img src="https://cdn.discordapp.com/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logo" />
             </Box>
             <ul>
-                <Link to="/home" className="a"><li>Home</li></Link>
-                <Link to="/posts" className="a"><li>Posts</li></Link>
-                <Link to="/temas" className="a"><li>Temas</li></Link>
-                <Link to="/sobre" className="a"><li>Sobre</li></Link>
-                <Link to="/contato" className="a"><li>Contato</li></Link>
-                <Link to="/" className="a" onClick={goLogout}><li>Logout</li></Link>
+                <Link to="/home" className="a">
+                    <HomeRounded />
+                    <Box>Home</Box>
+                </Link>
+                <Link to="/postagem" className="a">
+                    <LibraryBooksRounded />
+                    <Box>Postagens</Box>
+                </Link>
+                <Link to="/temas" className="a">
+                    <AssignmentRounded />
+                    <Box>Temas</Box>
+                </Link>
+                <Link to="/sobre" className="a">
+                    <GroupRounded />
+                    <Box>Sobre</Box>
+                </Link>
+                <Link to="/contato" className="a">
+                    <ContactMailRounded />
+                    <Box>Contato</Box>
+                </Link>
+                <Link to="/" className="a" onClick={goLogout}>
+                    <ExitToAppRounded />
+                    <Box>Logout</Box>
+                </Link>
             </ul>
             <input className='input' placeholder='pesquisar' />
         </nav>

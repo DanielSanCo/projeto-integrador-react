@@ -45,7 +45,7 @@ function Posts() {
                         <Box marginRight={1}>
                             <ModalPostagem />
                         </Box>
-                        <Link to="/posts" className="text-decorator-none">
+                        <Link to="/formularioTema" className="text-decorator-none">
                             <Button variant="outlined" className='botao'>Novo Tema</Button>
                         </Link>
                     </Box>

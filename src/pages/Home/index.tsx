@@ -40,7 +40,7 @@ const Apresentacao = () => {
                 <Typography variant='h5'>A Nossa Missão é</Typography>
                 <Typography variant='h3'>GERAR RESULTADOS</Typography>
                 <Typography variant='h6'>Uma rede social que motiva alunos e professores a compartilharem idéias e ensinamentos.</Typography>
-                <Link to="/postagem" className="a"><Box className='showPost'>Ver Postagens</Box></Link>
+                <Link to="/postagem" className="linkPost"><Box className='showPost'>Ver Postagens</Box></Link>
             </Box>
             <Box className='hHome'>
                 <Box className='generateduBox'>

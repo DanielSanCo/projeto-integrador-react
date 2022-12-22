@@ -1,18 +1,26 @@
 .container-About {
     color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     min-height: 100vh; width: 100vw;
-    background: linear-gradient(rgba(221,20,80,1), rgba(230,128,21,1));
 }
 
 .container-About .our-mission {
     display: flex;
     width: 60vw;
-    margin-top: 60px;
-    margin-bottom: 60px;
+    z-index: 1;
+}
+.container-About .our-mission:nth-child(1) {
+    display: flex;
+    width: 60vw;
+    margin-top: 150px;
+    z-index: 1;
+}
+
+.ourMissionArea {
+    height: 100vh; width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .container-About .our-mission img {
@@ -28,6 +36,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 1;
 }
 .integranteaTitulo {
     height: 40px;
@@ -43,7 +52,7 @@
     width: 60%;
     justify-content: space-around;
     margin-bottom: 100px;
-    background: linear-gradient(190deg, rgba(50, 50, 247, .8),rgba(0,0,0,0));
+    background: linear-gradient(190deg, rgba(230,128,21,1),rgba(0,0,0,.3));
     padding: 15px;
     border-radius: 5px;
 }
@@ -67,10 +76,31 @@
 
 .memberCurriculo {
     width: 100px; height: 35px;
-    background-color: blueviolet;
+    background-color: rgba(221,20,80,1);
     color: white;
     border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.conteudoAbout {
+    
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; width: 100vw;
+    z-index: 1;
+}
+.transparentAbout {
+    width: 100vw; height: 100vh;
+    position: fixed;
+    background-color: rgba(255,255,255,.9);
+    z-index: 1;
+}
+.fundoAboutImg img {
+    width: 100vw; height: 100vh;
+    position: fixed;
+    z-index: 0;
 }
