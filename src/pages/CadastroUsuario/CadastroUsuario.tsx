@@ -2,6 +2,7 @@ import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Box } from '@mui/material';
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import User from '../../models/User';
 import { cadastroUsuario } from '../../services/Service';
 import './CadastroUsuario.css';
@@ -50,11 +51,29 @@ function CadastroUsuario() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if (confirmarSenha === user.senha) {
-            cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            alert('Usuario cadastrado com sucesso')
-        } else {
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+        if(confirmarSenha == user.senha && user.usuario !== '' && user.nome !== ''){
+        cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+        toast.success('Usuario cadastrado com sucesso', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+            });
+        }else{
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+                });
         }
     }
 
@@ -76,7 +95,7 @@ function CadastroUsuario() {
 
                         <TextField className='inputArea' value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' type='password' placeholder='Senha' name='senha' />
 
-                        <TextField className='inputArea' value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='senha' placeholder='Confirmar Senha' name='senha' />
+                        <TextField className='inputArea' value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='senha' type='password' placeholder='Confirmar Senha' name='senha' />
 
                         <TextField className='inputArea' value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='foto' placeholder='foto link' name='foto' />
 

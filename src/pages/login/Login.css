@@ -1,6 +1,6 @@
-.container {
+.container-login {
     background-color: white;
-    width: 100vw; min-height: 120vh;
+    width: 100vw; min-height: 100vh;
     display: flex; justify-content: center; align-items: center;
     font-family: 'Nixie One', cursive;
     font-family: 'Oswald', sans-serif;

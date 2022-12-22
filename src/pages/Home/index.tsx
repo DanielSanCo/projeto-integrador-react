@@ -10,6 +10,7 @@ import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem';
 import ListaPostagem from '../../components/postagens/listaPostagem/ListaPostagem';
 import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import books from '../../utils/books';
+import podcasts from '../../utils/podcasts';
 
 const Apresentacao = () => {
 
@@ -35,7 +36,7 @@ const Apresentacao = () => {
     }, [token])
 
     return (
-        <Box className='container'>
+        <Box className='container-home'>
             <Box className='homeDegrade'>
                 <Typography variant='h5'>A Nossa Missão é</Typography>
                 <Typography variant='h3'>GERAR RESULTADOS</Typography>
@@ -59,7 +60,7 @@ const Apresentacao = () => {
                             alt="green iguana"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5">
                                 Postagens
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
@@ -68,7 +69,7 @@ const Apresentacao = () => {
                         </CardContent>
                     </Card>
                 </Link>
-                <Link to="/postagem" className='link-home-content'>
+                <Link to="/sobre" className='link-home-content'>
                     <Card sx={{ maxWidth: 300 }}>
                         <CardMedia
                             component="img"
@@ -77,7 +78,7 @@ const Apresentacao = () => {
                             alt="green iguana"
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5">
                                 Sobre
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
@@ -86,30 +87,47 @@ const Apresentacao = () => {
                         </CardContent>
                     </Card>
                 </Link>
-                <div className='quadrado'></div>
-                {/* Terá 3 cards com links para Posts, sobre e dicas */}
+                <Box className='quadrado'></Box>
             </Box>
             <Box className='livros-home'>
-                <div>
+                <Box>
                     <img src="https://conteudo.imguol.com.br/c/entretenimento/9d/2019/04/22/como-voce-vai-comemorar-o-dia-do-livro-1555959523311_v2_450x450.jpg" alt="" className='lendo-livro' />
-                </div>
-                <div className='livros-img'>
-                    <h2 style={{ marginTop: '100px' }}>Livros</h2>
-                    <h4>Livros que expandem o conhecimento</h4>
-                    <div style={{ display: 'flex' }}>
+                </Box>
+                <Box className='livros-img'>
+                    <Typography gutterBottom variant="h4">
+                        Livros
+                    </Typography>
+                    <Typography gutterBottom variant="h6">
+                        Livros que expandem o conhecimento
+                    </Typography>
+                    <Box style={{ display: 'flex' }}>
                         {books.map((item, index) => (
-                            <div className='livros'>
+                            <Box className='livros'>
                                 <img src={item.img} alt="" />
-                                <div>{item.nome}</div>
-                            </div>
+                                <Box>{item.nome}</Box>
+                            </Box>
                         ))}
-                    </div>
-                </div>
-                {/* Livros recomendados */}
+                    </Box>
+                </Box>
             </Box>
-            <Box className='empresas-home'>
-                <h2>Empresas</h2>
-                {/* Terá cards com empresas parceiras */}
+            <Box className='podcasts-home'>
+                <Box className='livros-img'>
+                    <Typography gutterBottom variant="h3">
+                        Podcasts
+                    </Typography>
+                    <Typography gutterBottom variant="h6">
+                        Podcasts que agregam ao conhecimento
+                    </Typography>
+                    <Box style={{ display: 'flex' }}>
+                        {podcasts.map((item, index) => (
+                                <Box className='livros'>
+                                    <img src={item.img} alt="" />
+                                    <Box>{item.nome}</Box>
+                                </Box>
+                        ))}
+                    </Box>
+                </Box>
+
             </Box>
         </Box>
     )

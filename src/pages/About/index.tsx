@@ -56,10 +56,15 @@ const About = () => {
                                             <img src={item.img} alt="" />
                                         </Box>
                                         <Box className='eachIntegranteInfo'>
-                                            <Box>{item.name}</Box>
+                                            <Typography variant='h5'>{item.name}</Typography>
                                             <Box>{item.descricao}</Box>
+
                                             <Box className='memberCurriculo'>
-                                                curriculo
+                                                <a href={item.linkedin} target="_blank">Linkedin</a>
+                                            </Box>
+
+                                            <Box className='memberCurriculo'>
+                                                <a href={item.github} target="_blank">Github</a>
                                             </Box>
                                         </Box>
                                     </Box>
@@ -67,10 +72,15 @@ const About = () => {
                                     <Box className='eachIntegrante'>
 
                                         <Box className='eachIntegranteInfo'>
-                                            <Box>{item.name}</Box>
+                                            <Typography variant='h5'>{item.name}</Typography>
                                             <Box>{item.descricao}</Box>
+
                                             <Box className='memberCurriculo'>
-                                                curriculo
+                                                <a href={item.linkedin} target="_blank">Linkedin</a>
+                                            </Box>
+
+                                            <Box className='memberCurriculo'>
+                                                <a href={item.github} target="_blank">Github</a>
                                             </Box>
                                         </Box>
 

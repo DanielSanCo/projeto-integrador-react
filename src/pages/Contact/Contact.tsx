@@ -6,11 +6,8 @@ import './Contact.css';
 
 const Contact = () => {
     return (
-        <Box className='container'>
+        <Box className='container-contato'>
             <Box className='contact'>
-                <Box className='logoArea'>
-                    <img src="https://media.discordapp.net/attachments/1022847836406165517/1049075991521275924/b-removebg-preview.png" alt="" />
-                </Box>
                 <Box className='contatoArea'>
                     <form>
                         <img src="https://media.discordapp.net/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logoLogin" />

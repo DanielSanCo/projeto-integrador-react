@@ -68,7 +68,7 @@ function Login() {
     }
 
     return (
-        <Grid className='container'>
+        <Grid className='container-login'>
             <Box className='loginArea'>
                 <form onSubmit={onSubmit}>
                     <img src="https://media.discordapp.net/attachments/1022847836406165517/1049076028527616002/c-removebg-preview.png" alt="" className="logoLogin" />

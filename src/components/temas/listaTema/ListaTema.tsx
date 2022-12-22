@@ -9,6 +9,7 @@ import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { toast } from 'react-toastify';
+import ModalTema from '../modalTema/ModalTemas';
 
 function ListaTema() {
     const [temas, setTemas] = useState<Tema[]>([])
@@ -53,11 +54,7 @@ function ListaTema() {
             <Box className='temasTitle'>
                 <Typography variant='h2'>Temas</Typography>
             </Box>
-            <Link to="/formularioTema" className="text-decorator-none">
-                <Button variant="contained">
-                    Novo Tema
-                </Button>
-            </Link>
+            <ModalTema/>
             <Box className='temaList'>
                 {temas.length <= 0 &&
                     <Box className="fundoPostagem">
