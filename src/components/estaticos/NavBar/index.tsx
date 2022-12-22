@@ -44,7 +44,7 @@ function Navbar() {
                     <HomeRounded />
                     <Box>Home</Box>
                 </Link>
-                <Link to="/postagem" className="a">
+                <Link to="/posts" className="a">
                     <LibraryBooksRounded />
                     <Box>Postagens</Box>
                 </Link>

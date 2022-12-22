@@ -6,11 +6,11 @@
 
 .homeDegrade {
     width: 100vw; height: 80vh;
-    background: rgba(0, 0, 0, .85);
+    background: rgba(0, 0, 0, .80);
     position: absolute;
     z-index: 3;
     /*margin-top: -1653px;*/
-    margin-top: -134%;
+    margin-top: -136%;
     display: flex;
     justify-content: center;
     align-items: center;

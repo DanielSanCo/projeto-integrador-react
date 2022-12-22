@@ -59,6 +59,11 @@ function ListaTema() {
                 </Button>
             </Link>
             <Box className='temaList'>
+                {temas.length <= 0 &&
+                    <Box className="fundoPostagem">
+                        <img src="https://i.pinimg.com/originals/a9/ff/d7/a9ffd714fbd4966d46ef4ee77ce96e95.gif" alt="" />
+                    </Box>
+                }
                 {
                     temas.map(tema => (
                         <Box m={2} className="eachTema">
